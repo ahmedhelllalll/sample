@@ -502,7 +502,7 @@
         <div class="absolute top-1/4 right-10 w-[300px] h-[300px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
         <div class="absolute bottom-1/4 left-10 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
-        <div id="problem-solution-heading" class="text-center mb-16">
+        <div id="problem-solution-heading" class="text-center mb-16 gsap-reveal">
             <span class="text-slate-500 text-sm font-bold uppercase tracking-widest mb-3 block">التحول الجذري</span>
             <h2 class="text-3xl md:text-5xl font-bold text-white">من المشكلة إلى النمو المتسارع</h2>
         </div>
@@ -512,7 +512,7 @@
 
 
             <!-- Problem Card (Before - Right side) -->
-            <div id="ps-card-problem" class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col justify-between border-t-4 border-red-500/40 shadow-[0_20px_50px_rgba(239,68,68,0.02)] hover:border-red-500/60 transition-all duration-500">
+            <div id="ps-card-problem" class="glass-card gsap-reveal p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col justify-between border-t-4 border-red-500/40 shadow-[0_20px_50px_rgba(239,68,68,0.02)] hover:border-red-500/60 transition-all duration-500">
                 <!-- Inner grid glow -->
                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.05),transparent_60%)] pointer-events-none"></div>
                 
@@ -558,7 +558,7 @@
             </div>
 
             <!-- Solution Card (After - Left side) -->
-            <div id="ps-card-solution" class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col justify-between border-t-4 border-blue-500/40 shadow-[0_20px_50px_rgba(59,130,246,0.05)] hover:border-blue-500/60 transition-all duration-500 lg:scale-[1.03]">
+            <div id="ps-card-solution" class="glass-card gsap-reveal p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col justify-between border-t-4 border-blue-500/40 shadow-[0_20px_50px_rgba(59,130,246,0.05)] hover:border-blue-500/60 transition-all duration-500 lg:scale-[1.03]">
                 <!-- Special Glow Tag -->
                 <div class="absolute -top-1 -right-1 bg-gradient-to-l from-blue-600 to-cyan-500 text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-bl-2xl shadow-[0_4px_20px_rgba(59,130,246,0.3)] z-10">
                     الخيار الأذكى والأكثر استدامة
@@ -1086,16 +1086,16 @@
     </div>
 
     <!-- FAQ Section -->
-    <section class="py-32 container mx-auto px-6">
+    <section id="faq-section" class="py-32 container mx-auto px-6">
         <div class="text-center mb-16">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 gsap-reveal">
                 الأسئلة الشائعة
             </h2>
         </div>
         
         <div class="max-w-3xl mx-auto space-y-4">
             <!-- FAQ Item 1 -->
-            <div class="glass-card p-6 rounded-xl cursor-pointer group" onclick="this.classList.toggle('active-faq')">
+            <div class="glass-card gsap-reveal p-6 rounded-xl cursor-pointer group" onclick="this.classList.toggle('active-faq')">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-lg">متى أبدأ في رؤية النتائج؟</h4>
                     <span class="text-blue-500 transform transition-transform duration-300 group-[.active-faq]:rotate-180">▼</span>
@@ -1110,7 +1110,7 @@
             </div>
             
             <!-- FAQ Item 2 -->
-            <div class="glass-card p-6 rounded-xl cursor-pointer group" onclick="this.classList.toggle('active-faq')">
+            <div class="glass-card gsap-reveal p-6 rounded-xl cursor-pointer group" onclick="this.classList.toggle('active-faq')">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-lg">هل تضمنون الظهور في النتيجة الأولى؟</h4>
                     <span class="text-blue-500 transform transition-transform duration-300 group-[.active-faq]:rotate-180">▼</span>
@@ -1125,7 +1125,7 @@
             </div>
 
             <!-- FAQ Item 3 -->
-            <div class="glass-card p-6 rounded-xl cursor-pointer group" onclick="this.classList.toggle('active-faq')">
+            <div class="glass-card gsap-reveal p-6 rounded-xl cursor-pointer group" onclick="this.classList.toggle('active-faq')">
                 <div class="flex justify-between items-center">
                     <h4 class="font-bold text-lg">ما الفرق بين الـ SEO والإعلانات المدفوعة؟</h4>
                     <span class="text-blue-500 transform transition-transform duration-300 group-[.active-faq]:rotate-180">▼</span>
@@ -1446,6 +1446,30 @@
                        .to(".graph-dot", { opacity: 1, duration: 0.3, stagger: 0.2 }, "-=0.5")
                        .to(".graph-tooltip-2", { opacity: 1, duration: 0.5, y: -5 }, "-=0.2");
             }
+
+            gsap.to("#problem-solution .gsap-reveal", {
+                scrollTrigger: {
+                    trigger: "#problem-solution",
+                    start: "top 80%"
+                },
+                autoAlpha: 1,
+                y: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+
+            gsap.to("#faq-section .gsap-reveal", {
+                scrollTrigger: {
+                    trigger: "#faq-section",
+                    start: "top 80%"
+                },
+                autoAlpha: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
 
             gsap.to(".service-grid .gsap-reveal", {
                 scrollTrigger: {
