@@ -3,18 +3,53 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Axon SEO | نمو حقيقي من نتائج البحث</title>
+    <meta name="description" content="وكالة متخصصة في تحسين محركات البحث SEO، نساعد الشركات على زيادة الزيارات العضوية والمبيعات من خلال استراتيجيات مبنية على البيانات. احصل على استشارة مجانية." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://uplinkseo.com/" />
+    
+    <!-- Open Graph & Twitter -->
+    <meta property="og:title" content="UpLink SEO | نمو حقيقي من نتائج البحث" />
+    <meta property="og:description" content="وكالة متخصصة في تحسين محركات البحث SEO لزيادة الزيارات العضوية والمبيعات." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://uplinkseo.com/" />
+    <meta property="og:site_name" content="UpLink SEO" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <title>UpLink SEO | نمو حقيقي من نتائج البحث</title>
 
     <!-- Tailwind CSS -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SEOAgency",
+      "name": "UpLink SEO",
+      "url": "https://uplinkseo.com/",
+      "description": "وكالة متخصصة في تحسين محركات البحث SEO، نساعد الشركات على زيادة الزيارات العضوية والمبيعات من خلال استراتيجيات مبنية على البيانات.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "دبي",
+        "addressCountry": "AE"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "hello@uplinkseo.com",
+        "contactType": "customer service"
+      }
+    }
+    </script>
 
     <style>
         :root {
@@ -22,11 +57,15 @@
             --font-title: 'IBM Plex Sans Arabic', sans-serif;
         }
 
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            background-color: #020617;
+        }
+
         body {
             font-family: var(--font-main);
-            background-color: #020617;
             color: #f8fafc;
-            overflow-x: hidden;
             line-height: 1.7;
         }
 
@@ -47,9 +86,10 @@
         }
 
         .glass-card:hover {
-            border-color: rgba(59, 130, 246, 0.3);
-            background: rgba(15, 23, 42, 0.6);
+            border-color: rgba(255, 255, 255, 0.08);
+            background: rgba(15, 23, 42, 0.7);
             transform: translateY(-8px);
+            box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.15);
         }
 
         .offer-card-premium {
@@ -64,10 +104,16 @@
             transition: all 0.4s ease;
         }
 
+        @keyframes btn-glow {
+            0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.9), 0 0 10px rgba(59, 130, 246, 0.6); }
+            100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+        }
+
         .btn-luxury:hover {
             background: #3b82f6;
             color: #fff;
-            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+            animation: btn-glow 1.5s infinite;
         }
 
         .gsap-reveal {
@@ -80,10 +126,62 @@
             color: #fff;
         }
 
+        @keyframes pulse-ring-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        @keyframes pulse-ring-blue {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        .pulse-red {
+            animation: pulse-ring-red 2s infinite;
+        }
+        .pulse-blue {
+            animation: pulse-ring-blue 2s infinite;
+        }
+
         * {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+
+        /* Blog Specific Styles */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+        
+        /* Modal Scrollbar Styling */
+        #blog-modal-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        #blog-modal-scroll::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+        }
+        #blog-modal-scroll::-webkit-scrollbar-thumb {
+            background: rgba(59, 130, 246, 0.3);
+            border-radius: 4px;
+        }
+        #blog-modal-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(59, 130, 246, 0.5);
+        }
+
+        /* Logo Ticker Specific Styles */
+        @keyframes logoScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-logo-scroll {
+            display: flex;
+            width: max-content;
+            animation: logoScroll 30s linear infinite;
+        }
+
     </style>
 </head>
 
@@ -98,13 +196,14 @@
         <div id="nav-bg" class="absolute inset-0 bg-slate-950/80 backdrop-blur-xl border-b border-white/[0.05] opacity-0 transition-opacity duration-500 pointer-events-none -z-10"></div>
 
         <div class="text-2xl font-bold tracking-tighter uppercase relative z-[60]" style="font-family: var(--font-title);">
-            AXON<span class="text-blue-500">.</span>
+            UPLINK<span class="text-blue-500">.</span>
         </div>
 
-        <div class="hidden md:flex space-x-reverse space-x-12 text-sm font-medium opacity-80">
+        <div class="hidden md:flex space-x-reverse space-x-10 text-sm font-medium opacity-80">
             <a href="#services" class="hover:text-blue-400 transition">الخدمات</a>
             <a href="#results" class="hover:text-blue-400 transition">النتائج</a>
             <a href="#offers" class="hover:text-blue-400 transition">الباقات</a>
+            <a href="#blog" class="hover:text-blue-400 transition">المدونة</a>
         </div>
 
         <button class="hidden md:block text-sm font-bold border border-white/10 px-8 py-3 rounded-full hover:bg-white hover:text-black transition duration-500">
@@ -112,7 +211,7 @@
         </button>
 
         <!-- Mobile Toggle -->
-        <button id="mobile-menu-btn" class="md:hidden relative z-[60] text-white w-10 h-10 flex justify-center items-center">
+        <button id="mobile-menu-btn" aria-label="القائمة الرئيسية" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden relative z-[60] text-white w-10 h-10 flex justify-center items-center">
             <!-- Hamburger Icon -->
             <svg id="menu-icon-open" class="w-6 h-6 absolute transition-all duration-300 transform opacity-100 rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -129,12 +228,14 @@
         <a href="#services" class="mobile-link text-2xl font-bold hover:text-blue-400 transition">الخدمات</a>
         <a href="#results" class="mobile-link text-2xl font-bold hover:text-blue-400 transition">النتائج</a>
         <a href="#offers" class="mobile-link text-2xl font-bold hover:text-blue-400 transition">الباقات</a>
+        <a href="#blog" class="mobile-link text-2xl font-bold hover:text-blue-400 transition">المدونة</a>
         <a href="#contact" class="mobile-link mt-4 w-[80%] max-w-sm text-center text-lg font-bold border border-blue-500 bg-blue-600/10 px-8 py-4 rounded-full text-white">
             احجز استشارة مجانية
         </a>
     </div>
 
     <!-- Hero -->
+    <main>
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative">
         <div id="hero-content">
 
@@ -166,60 +267,150 @@
         </div>
     </section>
 
-    <!-- Trust Stats -->
-    <section class="py-16 md:py-28 border-y border-white/[0.03] bg-slate-950/20">
-        <div class="container mx-auto px-6">
+    <!-- SEO Tools Logo Ticker -->
+    <section class="py-12 border-y border-white/[0.03] bg-slate-950/20 relative overflow-hidden select-none z-20">
+        <div class="container mx-auto px-6 mb-8 text-center gsap-reveal">
+            <span class="text-slate-500 text-xs font-bold uppercase tracking-[0.25em]">الأدوات التقنية التي نقود بها نجاحك</span>
+        </div>
+        <div class="logo-ticker-container overflow-hidden w-full relative" dir="ltr">
+            <!-- Left and Right gradient fades to mask edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none"></div>
 
-            <!-- Social Proof Logos -->
-            <div class="mb-16 md:mb-24 text-center opacity-50">
-                <p class="text-sm font-bold mb-8">موثوقون من قبل الشركات الرائدة</p>
-                <div class="flex overflow-x-auto snap-x md:flex-wrap md:justify-center gap-8 md:gap-16 text-xl md:text-2xl font-bold uppercase tracking-widest font-sans whitespace-nowrap pb-4 md:pb-0" style="scrollbar-width: none;">
-                    <span class="snap-center shrink-0">BrandCo.</span>
-                    <span class="snap-center shrink-0">Nexus</span>
-                    <span class="snap-center shrink-0">Elevate</span>
-                    <span class="snap-center shrink-0">Pinnacle</span>
-                    <span class="snap-center shrink-0">Vortex</span>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
-
-                <div class="stat-item">
-                    <div class="stat-number text-4xl md:text-5xl font-bold mb-3 text-white">+140%</div>
-                    <div class="text-sm text-slate-500 font-bold">
-                        نمو الزيارات العضوية
+            <div class="animate-logo-scroll flex items-center">
+                <!-- Group 1 -->
+                <div class="flex gap-24 items-center px-12 shrink-0">
+                    <!-- Ahrefs -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 22h6l2-4h8l2 4h6L16 2zm1 12h-4l2-5.5z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">ahrefs</span>
+                    </div>
+                    <!-- SEMrush -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 15c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/>
+                            <circle cx="12" cy="12" r="2.5"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">semrush</span>
+                    </div>
+                    <!-- Screaming Frog -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm-2 6c.8 0 1.5.7 1.5 1.5S10.8 13 10 13s-1.5-.7-1.5-1.5S9.2 10 10 10zm4 0c.8 0 1.5.7 1.5 1.5S14.8 13 14 13s-1.5-.7-1.5-1.5S13.2 10 14 10z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">ScreamingFrog</span>
+                    </div>
+                    <!-- Google Search Console -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 19h20L12 3z"/>
+                            <path d="M6 17l4-6 4 4 4-7" stroke="#020617" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">Search Console</span>
+                    </div>
+                    <!-- Google Analytics -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 18h2v-6H4v6zm4 0h2V6H8v12zm4 0h2V2h-2v16z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">Google Analytics</span>
+                    </div>
+                    <!-- Moz -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 20V4h4l4 8 4-8h4v16h-4V10l-4 8-4-8v10z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">moz</span>
+                    </div>
+                    <!-- Hotjar -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.7 5.3 6 8.7 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-3.3-2.7-6.7-6-10z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">hotjar</span>
+                    </div>
+                    <!-- PageSpeed -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 14c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                            <path d="M12 8l3 4h-6z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">PageSpeed</span>
                     </div>
                 </div>
 
-                <div class="stat-item">
-                    <div class="stat-number text-4xl md:text-5xl font-bold mb-3 text-white">4.2x</div>
-                    <div class="text-sm text-slate-500 font-bold">
-                        زيادة العملاء المحتملين
+                <!-- Group 2 (Duplicate for loop) -->
+                <div class="flex gap-24 items-center px-12 shrink-0" aria-hidden="true">
+                    <!-- Ahrefs -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L2 22h6l2-4h8l2 4h6L16 2zm1 12h-4l2-5.5z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">ahrefs</span>
+                    </div>
+                    <!-- SEMrush -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 15c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/>
+                            <circle cx="12" cy="12" r="2.5"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">semrush</span>
+                    </div>
+                    <!-- Screaming Frog -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm-2 6c.8 0 1.5.7 1.5 1.5S10.8 13 10 13s-1.5-.7-1.5-1.5S9.2 10 10 10zm4 0c.8 0 1.5.7 1.5 1.5S14.8 13 14 13s-1.5-.7-1.5-1.5S13.2 10 14 10z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">ScreamingFrog</span>
+                    </div>
+                    <!-- Google Search Console -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 19h20L12 3z"/>
+                            <path d="M6 17l4-6 4 4 4-7" stroke="#020617" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">Search Console</span>
+                    </div>
+                    <!-- Google Analytics -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4 18h2v-6H4v6zm4 0h2V6H8v12zm4 0h2V2h-2v16z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">Google Analytics</span>
+                    </div>
+                    <!-- Moz -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2 20V4h4l4 8 4-8h4v16h-4V10l-4 8-4-8v10z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">moz</span>
+                    </div>
+                    <!-- Hotjar -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.7 5.3 6 8.7 6 12c0 3.3 2.7 6 6 6s6-2.7 6-6c0-3.3-2.7-6.7-6-10z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">hotjar</span>
+                    </div>
+                    <!-- PageSpeed -->
+                    <div class="flex items-center gap-2.5 text-slate-500/40 hover:text-blue-400 transition-all duration-300 transform scale-95 hover:scale-100 cursor-pointer">
+                        <svg class="h-7 w-auto" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 14c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+                            <path d="M12 8l3 4h-6z"/>
+                        </svg>
+                        <span class="text-lg font-black tracking-tight font-sans">PageSpeed</span>
                     </div>
                 </div>
-
-                <div class="stat-item">
-                    <div class="stat-number text-4xl md:text-5xl font-bold mb-3 text-white">92%</div>
-                    <div class="text-sm text-slate-500 font-bold">
-                        معدل الاحتفاظ بالعملاء
-                    </div>
-                </div>
-
-                <div class="stat-item">
-                    <div class="stat-number text-4xl md:text-5xl font-bold mb-3 text-white">Top 3</div>
-                    <div class="text-sm text-slate-500 font-bold">
-                        متوسط ترتيب الكلمات
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- The AXON Effect Graph -->
-    <section id="axon-effect" class="py-16 md:py-32 container mx-auto px-6 relative z-10">
+    <!-- The UPLINK Effect Graph -->
+    <section id="uplink-effect" class="py-16 md:py-32 container mx-auto px-6 relative z-10">
         <div class="text-center mb-16 gsap-reveal">
-            <span class="text-blue-500 text-sm font-bold uppercase tracking-widest">تأثير AXON</span>
+            <span class="text-blue-500 text-sm font-bold uppercase tracking-widest">تأثير UPLINK</span>
             <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-4 text-white">من الركود إلى النمو المتسارع</h2>
             <p class="text-slate-400">هكذا يبدو مسار عملائنا بعد تطبيق استراتيجياتنا المبنية على البيانات.</p>
         </div>
@@ -243,7 +434,7 @@
                     <span>Jan</span>
                     <span>Feb</span>
                     <span>Mar</span>
-                    <span class="text-blue-500">AXON</span>
+                    <span class="text-blue-500">UPLINK</span>
                     <span>May</span>
                     <span>Jun</span>
                 </div>
@@ -273,10 +464,10 @@
                         </filter>
                     </defs>
 
-                    <!-- Before AXON Line (Flat/Struggling) -->
+                    <!-- Before UPLINK Line (Flat/Struggling) -->
                     <path id="graph-before" class="stroke-slate-500 drop-shadow-md" d="M0,330 L50,340 L100,320 L150,335 L200,325 L250,340 L300,310 L350,330 L400,320" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
                     
-                    <!-- After AXON Line (Growth) -->
+                    <!-- After UPLINK Line (Growth) -->
                     <path id="graph-after" class="stroke-blue-500" filter="url(#glow)" d="M400,320 L450,300 L500,310 L600,200 L700,220 L800,100 L900,120 L1000,40" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
                     
                     <!-- Intersection Dot -->
@@ -290,7 +481,7 @@
                 <!-- Floating Tooltips -->
                 <div class="graph-annotation absolute left-[40%] top-[70%] transform -translate-x-1/2 -translate-y-full opacity-0 text-center pointer-events-none z-10">
                     <div class="text-blue-400 text-[10px] md:text-xs font-bold bg-slate-900 border border-blue-500/30 px-3 py-1.5 rounded shadow-[0_0_15px_rgba(59,130,246,0.3)] mb-2 whitespace-nowrap">
-                        بدء استراتيجية AXON
+                        بدء استراتيجية UPLINK
                     </div>
                     <div class="w-px h-6 bg-blue-500/50 mx-auto"></div>
                 </div>
@@ -304,53 +495,118 @@
         </div>
     </section>
 
-    <!-- Problem + Solution Interactive Toggle -->
-    <section id="problem-solution" class="relative w-full h-[200vh]">
-        <div class="sticky top-0 w-full h-screen flex flex-col justify-center items-center overflow-hidden px-6 z-10">
-            
-            <!-- Dynamic Background Glows -->
-            <div id="ps-glow-red" class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.1)_0%,rgba(2,6,23,0)_50%)] -z-10 pointer-events-none"></div>
-            <div id="ps-glow-blue" class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1)_0%,rgba(2,6,23,0)_50%)] opacity-0 -z-10 pointer-events-none"></div>
+    <!-- Problem + Solution 2-Card Layout -->
+    <section id="problem-solution" class="py-24 md:py-32 w-full relative overflow-hidden z-10 flex flex-col items-center justify-center px-6">
+        
+        <!-- Dynamic Background Glows -->
+        <div class="absolute top-1/4 right-10 w-[300px] h-[300px] bg-red-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div class="absolute bottom-1/4 left-10 w-[300px] h-[300px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
 
-            <div class="text-center mb-8 md:mb-12">
-                <span class="text-slate-500 text-sm font-bold uppercase tracking-widest mb-3 block">التحول الجذري</span>
-                <h2 class="text-3xl md:text-5xl font-bold text-white">من المشكلة إلى النمو المتسارع</h2>
-            </div>
-
-            <div class="glass-card p-8 md:p-14 max-w-4xl w-full relative overflow-hidden" id="ps-card" style="border-top: 2px solid rgba(239, 68, 68, 0.5);">
-                
-                <!-- Top Toggle Indicator -->
-                <div class="flex justify-center items-center gap-4 mb-10 relative z-20">
-                    <span id="label-problem" class="text-sm md:text-base font-bold text-red-400">قبل AXON</span>
-                    <div class="w-16 h-8 rounded-full bg-slate-950 border border-white/10 relative flex items-center shadow-inner">
-                        <div id="toggle-knob" class="w-6 h-6 rounded-full bg-red-500 shadow-[0_0_15px_rgba(239,68,68,0.6)] absolute right-1"></div>
-                    </div>
-                    <span id="label-solution" class="text-sm md:text-base font-bold text-slate-500">بعد AXON</span>
-                </div>
-
-                <div class="relative w-full min-h-[350px] md:min-h-[250px]">
-                    <!-- Problem Content -->
-                    <div id="content-problem" class="absolute inset-0 flex flex-col items-center text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-white">لماذا لا يظهر موقعك؟</h3>
-                        <ul class="space-y-5 text-slate-400 text-base md:text-lg leading-relaxed font-medium text-right w-full max-w-2xl mx-auto">
-                            <li class="flex gap-4 items-center"><div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20 text-sm">✗</div> <span class="flex-1">منافسوك يستحوذون على نتائج البحث والعملاء المحتملين.</span></li>
-                            <li class="flex gap-4 items-center"><div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20 text-sm">✗</div> <span class="flex-1">موقعك يعاني من بطء في التحميل وأخطاء تمنع الأرشفة.</span></li>
-                            <li class="flex gap-4 items-center"><div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20 text-sm">✗</div> <span class="flex-1">تدفع ميزانيات للإعلانات المباشرة بدون نمو مستدام.</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Solution Content -->
-                    <div id="content-solution" class="absolute inset-0 flex flex-col items-center text-center opacity-0 invisible">
-                        <h3 class="text-2xl md:text-3xl font-bold mb-8 text-white">كيف نساعدك في تحقيق النمو؟</h3>
-                        <ul class="space-y-5 text-slate-400 text-base md:text-lg leading-relaxed font-medium text-right w-full max-w-2xl mx-auto">
-                            <li class="flex gap-4 items-center"><div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/20 text-sm">✓</div> <span class="flex-1">تحليل هندسي كامل للموقع وبناء استراتيجية تفوق المنافسين.</span></li>
-                            <li class="flex gap-4 items-center"><div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/20 text-sm">✓</div> <span class="flex-1">تحسين سرعة الموقع وتجربة المستخدم لأعلى المعايير التقنية.</span></li>
-                            <li class="flex gap-4 items-center"><div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/20 text-sm">✓</div> <span class="flex-1">بناء أصول رقمية قوية تجلب زيارات مجانية وتحويلات فعلية.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div id="problem-solution-heading" class="text-center mb-16">
+            <span class="text-slate-500 text-sm font-bold uppercase tracking-widest mb-3 block">التحول الجذري</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-white">من المشكلة إلى النمو المتسارع</h2>
         </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 max-w-6xl w-full relative items-stretch">
+            
+
+
+            <!-- Problem Card (Before - Right side) -->
+            <div id="ps-card-problem" class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col justify-between border-t-4 border-red-500/40 shadow-[0_20px_50px_rgba(239,68,68,0.02)] hover:border-red-500/60 transition-all duration-500">
+                <!-- Inner grid glow -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(239,68,68,0.05),transparent_60%)] pointer-events-none"></div>
+                
+                <div>
+                    <!-- Badge and Icon -->
+                    <div class="flex justify-between items-start mb-8 relative z-10">
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-red-950/40 text-red-400 border border-red-500/20 uppercase tracking-wider">
+                            قبل UPLINK (الوضع الحالي)
+                        </span>
+                        <div class="w-12 h-12 rounded-2xl bg-red-950/30 border border-red-500/20 flex items-center justify-center text-red-500 text-xl font-bold pulse-red">
+                            ⚠
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-white leading-tight relative z-10">
+                        الفجوة الرقمية: لماذا يخسر موقعك العملاء؟
+                    </h3>
+
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-8 relative z-10">
+                        الاعتماد على إعلانات الدفع مقابل النقرة المكلفة أو الأساليب غير المستدامة يؤدي إلى تسرب الميزانية دون بناء قيمة حقيقية لعلامتك التجارية.
+                    </p>
+
+                    <ul class="space-y-6 text-slate-300 text-sm md:text-base leading-relaxed relative z-10">
+                        <li class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20 text-xs font-bold mt-1">✗</div>
+                            <span class="flex-1 font-medium">هدر 70%+ من ميزانية الإعلانات المدفوعة دون تحقيق عائد مستدام أو ولاء حقيقي للعلامة التجارية.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20 text-xs font-bold mt-1">✗</div>
+                            <span class="flex-1 font-medium">خسارة أكثر من 90% من الزيارات المؤهلة لصالح المنافسين المتصدرين للصفحة الأولى.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center text-red-400 shrink-0 border border-red-500/20 text-xs font-bold mt-1">✗</div>
+                            <span class="flex-1 font-medium">أخطاء تقنية خفية وبطء التحميل يتسببان في خروج الزوار فوراً وصعوبة أرشفة قوقل لموقعك.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-900/50 flex items-center justify-between text-slate-500 text-xs relative z-10">
+                    <span>النتيجة: تراجع مستمر وتكاليف متزايدة</span>
+                    <span class="text-red-500 font-bold uppercase">خسارة صامتة</span>
+                </div>
+            </div>
+
+            <!-- Solution Card (After - Left side) -->
+            <div id="ps-card-solution" class="glass-card p-8 md:p-12 rounded-3xl relative overflow-hidden flex flex-col justify-between border-t-4 border-blue-500/40 shadow-[0_20px_50px_rgba(59,130,246,0.05)] hover:border-blue-500/60 transition-all duration-500 lg:scale-[1.03]">
+                <!-- Special Glow Tag -->
+                <div class="absolute -top-1 -right-1 bg-gradient-to-l from-blue-600 to-cyan-500 text-white text-[10px] md:text-xs font-bold px-4 py-1.5 rounded-bl-2xl shadow-[0_4px_20px_rgba(59,130,246,0.3)] z-10">
+                    الخيار الأذكى والأكثر استدامة
+                </div>
+
+                <!-- Inner grid glow -->
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.08),transparent_60%)] pointer-events-none"></div>
+                
+                <div>
+                    <!-- Badge and Icon -->
+                    <div class="flex justify-between items-start mb-8 relative z-10">
+                        <span class="px-4 py-1.5 rounded-full text-xs font-bold bg-blue-950/40 text-blue-400 border border-blue-500/20 uppercase tracking-wider">
+                            بعد UPLINK (المستقبل)
+                        </span>
+                        <div class="w-12 h-12 rounded-2xl bg-blue-950/30 border border-blue-500/20 flex items-center justify-center text-blue-400 text-xl font-bold pulse-blue">
+                            🚀
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-white leading-tight relative z-10">
+                        المستقبل مع UpLink: ريادة السوق العضوية
+                    </h3>
+
+                    <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-8 relative z-10">
+                        بناء بنية تحتية متكاملة تضع موقعك في مقدمة محركات البحث، وتضمن لك استحواذاً مستداماً وزيارات مجانية بأقل التكاليف.
+                    </p>
+
+                    <ul class="space-y-6 text-slate-300 text-sm md:text-base leading-relaxed relative z-10">
+                        <li class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/20 text-xs font-bold mt-1">✓</div>
+                            <span class="flex-1 font-medium text-white">استحواذ كامل على الكلمات المفتاحية الأكثر ربحية لزيادة الزيارات المجانية بأكثر من 300%.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/20 text-xs font-bold mt-1">✓</div>
+                            <span class="flex-1 font-medium text-white">بنية تقنية هندسية فائقة السرعة توافق معايير Core Web Vitals وتضمن أرشفة فورية من محركات البحث.</span>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 shrink-0 border border-blue-500/20 text-xs font-bold mt-1">✓</div>
+                            <span class="flex-1 font-medium text-white">استراتيجية محتوى ذكية تحول الزوار إلى عملاء دائمين، مما يقلل تكلفة الاستحواذ بمعدل 4x.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mt-12 pt-6 border-t border-slate-900/50 flex items-center justify-between text-slate-400 text-xs relative z-10">
+                    <span>النتيجة: هيمنة كاملة وعائد استثماري مضاعف</span>
+                    <span class="text-blue-400 font-bold uppercase">نمو متسارع</span>
+                </div>
+            </div>
     </section>
 
     <!-- Services -->
@@ -484,88 +740,134 @@
     </section>
 
     <!-- Offers -->
-    <section id="offers" class="py-16 md:py-32 relative overflow-hidden">
+    <section id="offers" class="py-24 md:py-32 relative overflow-hidden">
+        
+        <!-- Background Elements for Premium Feel -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-slate-800/30 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
         <div class="container mx-auto px-6 relative z-10">
 
             <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">
-                    باقات النمو
+                <span class="text-blue-500 text-sm font-bold tracking-widest uppercase mb-3 block">استثمارك في النمو</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                    باقات مصممة لتسريع أرباحك
                 </h2>
-
-                <p class="text-slate-400 max-w-2xl mx-auto">
-                    اختر الخطة المناسبة لمرحلة عملك الحالية.
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg font-light">
+                    اختر الخطة المناسبة لمرحلة عملك الحالية. لا توجد عقود مخفية، فقط استراتيجيات مبنية على النتائج.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
 
-                <!-- Offer 1 -->
-                <div class="glass-card gsap-reveal p-10 flex flex-col">
+                <!-- Offer 1: Starter -->
+                <div class="glass-card gsap-reveal p-10 flex flex-col rounded-3xl border border-white/5 bg-slate-900/40 hover:bg-slate-900/60 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-700/20 rounded-full blur-3xl group-hover:bg-blue-900/20 transition-all duration-500"></div>
+                    
+                    <h3 class="text-2xl font-bold mb-2 text-white">Starter</h3>
+                    <p class="text-slate-400 text-sm mb-6 h-10">الخطة المثالية للشركات الناشئة لضمان تأسيس رقمي صحيح.</p>
 
-                    <h3 class="text-xl font-bold mb-2">
-                        Starter
-                    </h3>
-
-                    <div class="offer-price text-4xl font-bold mb-6 text-blue-400">
-                        $900
+                    <div class="flex items-baseline gap-2 mb-8 border-b border-white/5 pb-8">
+                        <span class="offer-price text-5xl font-bold text-white">$900</span>
+                        <span class="text-slate-400 text-sm font-medium">/ شهرياً</span>
                     </div>
 
-                    <ul class="text-slate-400 space-y-4 mb-10 flex-grow text-sm">
-                        <li>✓ SEO Audit شامل</li>
-                        <li>✓ تحسين تقني أساسي</li>
-                        <li>✓ استهداف 10 كلمات مفتاحية</li>
+                    <ul class="text-slate-300 space-y-5 mb-10 flex-grow text-sm font-medium">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>SEO Audit شامل للموقع</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>تحسين تقني أساسي للسرعة</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-blue-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>استهداف 10 كلمات مفتاحية</span>
+                        </li>
                     </ul>
 
-                    <button class="w-full py-4 border border-white/10 rounded-xl hover:bg-white hover:text-black transition duration-300 text-sm font-bold">
+                    <button class="w-full py-4 border border-white/10 rounded-2xl hover:bg-white hover:text-slate-900 transition-all duration-300 text-sm font-bold">
                         ابدأ الآن
                     </button>
                 </div>
 
-                <!-- Offer 2 -->
-                <div class="glass-card gsap-reveal offer-card-premium p-10 flex flex-col md:scale-105">
-
-                    <div class="bg-blue-600 text-[11px] font-bold py-1 px-3 rounded-full self-start mb-4">
+                <!-- Offer 2: Growth (Premium) -->
+                <div class="glass-card gsap-reveal offer-card-premium p-10 md:p-12 flex flex-col rounded-3xl border border-blue-500/30 relative overflow-hidden md:scale-105 z-20 shadow-[0_0_40px_rgba(59,130,246,0.15)] group">
+                    <!-- Glow effect -->
+                    <div class="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/30 rounded-full blur-3xl group-hover:bg-blue-400/40 transition-all duration-700"></div>
+                    
+                    <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-blue-400 text-white text-[11px] font-bold py-1.5 px-4 rounded-bl-xl tracking-wider">
                         الأكثر طلباً
                     </div>
 
-                    <h3 class="text-xl font-bold mb-2">
-                        Growth
-                    </h3>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Growth</h3>
+                    <p class="text-blue-200/70 text-sm mb-6 h-10">للشركات الجاهزة للسيطرة على السوق ومضاعفة التحويلات.</p>
 
-                    <div class="offer-price text-4xl font-bold mb-6 text-white">
-                        $2,400
+                    <div class="flex items-baseline gap-2 mb-8 border-b border-blue-500/20 pb-8">
+                        <span class="offer-price text-5xl font-bold text-white">$2,400</span>
+                        <span class="text-blue-200/50 text-sm font-medium">/ شهرياً</span>
                     </div>
 
-                    <ul class="text-slate-300 space-y-4 mb-10 flex-grow text-sm">
-                        <li>✦ Content Strategy</li>
-                        <li>✦ بناء روابط عالية الجودة</li>
-                        <li>✦ تقارير وتحليلات شهرية</li>
+                    <ul class="text-white space-y-5 mb-10 flex-grow text-sm font-medium">
+                        <li class="flex items-start gap-3">
+                            <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <span>بناء Content Strategy متكاملة</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <span>بناء روابط (Backlinks) عالية الجودة</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <span>تحليل المنافسين والفرص المتقدمة</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-5 h-5 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                <svg class="w-3 h-3 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                            </div>
+                            <span>تقارير شفافة وتحليلات شهرية</span>
+                        </li>
                     </ul>
 
-                    <button class="w-full py-4 btn-luxury rounded-xl text-sm font-bold">
+                    <button class="w-full py-4 btn-luxury rounded-2xl text-sm font-bold shadow-[0_0_20px_rgba(59,130,246,0.3)]">
                         احجز استشارة
                     </button>
                 </div>
 
-                <!-- Offer 3 -->
-                <div class="glass-card gsap-reveal p-10 flex flex-col">
+                <!-- Offer 3: Enterprise -->
+                <div class="glass-card gsap-reveal p-10 flex flex-col rounded-3xl border border-white/5 bg-slate-900/40 hover:bg-slate-900/60 transition-colors relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-700/20 rounded-full blur-3xl group-hover:bg-indigo-900/20 transition-all duration-500"></div>
+                    
+                    <h3 class="text-2xl font-bold mb-2 text-white">Enterprise</h3>
+                    <p class="text-slate-400 text-sm mb-6 h-10">حلول مخصصة بالكامل للشركات الكبرى والمؤسسات.</p>
 
-                    <h3 class="text-xl font-bold mb-2">
-                        Enterprise
-                    </h3>
-
-                    <div class="offer-price text-4xl font-bold mb-6 text-blue-400">
-                        Custom
+                    <div class="flex items-baseline gap-2 mb-8 border-b border-white/5 pb-8">
+                        <span class="offer-price text-5xl font-bold text-white">Custom</span>
                     </div>
 
-                    <ul class="text-slate-400 space-y-4 mb-10 flex-grow text-sm">
-                        <li>✓ استراتيجية مخصصة بالكامل</li>
-                        <li>✓ فريق SEO مخصص</li>
-                        <li>✓ دعم مستمر وتحليلات متقدمة</li>
+                    <ul class="text-slate-300 space-y-5 mb-10 flex-grow text-sm font-medium">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>استراتيجية SEO مخصصة بالكامل</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>فريق متخصص ومدير حساب شخصي</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>دعم فني واستشارات متقدمة</span>
+                        </li>
                     </ul>
 
-                    <button class="w-full py-4 border border-white/10 rounded-xl hover:bg-white hover:text-black transition duration-300 text-sm font-bold">
+                    <button class="w-full py-4 border border-white/10 rounded-2xl hover:bg-white hover:text-slate-900 transition-all duration-300 text-sm font-bold">
                         تواصل معنا
                     </button>
                 </div>
@@ -573,6 +875,215 @@
             </div>
         </div>
     </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-24 md:py-32 relative overflow-hidden border-t border-white/[0.03]">
+        <!-- Background Glows -->
+        <div class="absolute top-1/3 left-1/4 w-[600px] h-[600px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="mb-16 md:mb-24 text-right gsap-reveal">
+                <span class="text-blue-500 text-sm font-bold tracking-widest uppercase mb-3 block">المعرفة والخبرة</span>
+                <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-8">
+                    مدونة UpLink للنمو الرقمي
+                </h2>
+                <div class="w-20 h-[2px] bg-blue-600"></div>
+            </div>
+
+            <!-- Blog Grid Layout (Asymmetric) -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Featured Blog Card (Col Span 2) -->
+                <div class="lg:col-span-2 glass-card gsap-reveal rounded-3xl border border-white/5 bg-slate-900/30 hover:bg-slate-900/50 p-8 flex flex-col justify-between group overflow-hidden relative min-h-[480px]">
+                    <div class="absolute inset-0 bg-slate-950/80 z-0"></div>
+                    <!-- Ambient Accent Light -->
+                    <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl group-hover:bg-blue-600/20 transition-all duration-700 pointer-events-none"></div>
+                    
+                    <!-- Decorative Graphic Background -->
+                    <div class="absolute top-8 left-8 w-32 h-32 opacity-10 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none z-0">
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-blue-500 fill-none stroke-current" stroke-width="2">
+                            <circle cx="50" cy="50" r="40" stroke-dasharray="6,6" />
+                            <path d="M50 20 v60 M20 50 h60" />
+                            <path d="M30 30 L70 70 M30 70 L70 30" stroke-width="1" />
+                        </svg>
+                    </div>
+
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex gap-4 items-center mb-6">
+                                <span class="bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase">دراسة حالة</span>
+                                <span class="text-slate-400 text-xs flex items-center gap-1">
+                                    <span>⏱</span> 7 دقائق قراءة
+                                </span>
+                            </div>
+                            
+                            <h3 class="text-2xl md:text-4xl font-bold mb-4 text-white leading-tight group-hover:text-blue-400 transition-colors">
+                                كيف حققنا نمواً بنسبة 310% في الزيارات العضوية لمتجر إلكتروني؟
+                            </h3>
+                            <p class="text-slate-400 font-light leading-relaxed text-sm md:text-base max-w-xl">
+                                دراسة حالة تفصيلية نستعرض فيها الاستراتيجيات التقنية وهيكلة المحتوى التي استخدمناها لتجاوز المنافسين والسيطرة على نتائج البحث في السوق الخليجي خلال 6 أشهر فقط.
+                            </p>
+                        </div>
+
+                        <div class="mt-8 flex justify-between items-center border-t border-white/5 pt-6">
+                            <span class="text-slate-500 text-xs">20 مايو 2026</span>
+                            <button onclick="openBlog(0)" class="btn-luxury group flex items-center gap-2 px-8 py-3 rounded-full text-xs font-bold transition-all">
+                                <span>اقرأ دراسة الحالة</span>
+                                <span class="transition-transform group-hover:-translate-x-1">←</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Blogs Column (Col Span 1) -->
+                <div class="flex flex-col gap-6 lg:col-span-1">
+                    
+                    <!-- Blog Card 2 -->
+                    <div class="glass-card gsap-reveal rounded-2xl border border-white/5 bg-slate-900/30 hover:bg-slate-900/50 p-6 flex flex-col justify-between group relative overflow-hidden">
+                        <div class="absolute -top-12 -left-12 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all"></div>
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold px-2.5 py-1 rounded-full">سيو تقني</span>
+                                <span class="text-slate-400 text-[10px]">⏱ 5 دقائق</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+                                السيو التقني (Technical SEO): الدليل الشامل
+                            </h3>
+                            <p class="text-slate-400 font-light text-xs leading-relaxed line-clamp-2">
+                                الدليل الأساسي لتحسين سرعة الموقع، الأرشفة، وتجربة المستخدم لضمان زحف عناكب بحث جوجل بكفاءة دون أخطاء.
+                            </p>
+                        </div>
+                        <div class="mt-6 flex justify-between items-center border-t border-white/5 pt-4">
+                            <span class="text-slate-500 text-[10px]">15 مايو 2026</span>
+                            <button onclick="openBlog(1)" class="text-xs font-bold text-blue-400 hover:text-white transition flex items-center gap-1 group/btn">
+                                <span>اقرأ المقال</span>
+                                <span class="transition-transform group-hover/btn:-translate-x-1">←</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Blog Card 3 -->
+                    <div class="glass-card gsap-reveal rounded-2xl border border-white/5 bg-slate-900/30 hover:bg-slate-900/50 p-6 flex flex-col justify-between group relative overflow-hidden">
+                        <div class="absolute -top-12 -left-12 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all"></div>
+                        <div class="relative z-10">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold px-2.5 py-1 rounded-full">كتابة المحتوى</span>
+                                <span class="text-slate-400 text-[10px]">⏱ 4 دقائق</span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-3 text-white group-hover:text-blue-400 transition-colors">
+                                كيف تكتب محتوى يرضي جوجل والقارئ معاً؟
+                            </h3>
+                            <p class="text-slate-400 font-light text-xs leading-relaxed line-clamp-2">
+                                تعرف على معادلة كتابة المحتوى الذي يلبي نية البحث (Search Intent) ويوفر تجربة قراءة فريدة تزيد من وقت البقاء في الموقع.
+                            </p>
+                        </div>
+                        <div class="mt-6 flex justify-between items-center border-t border-white/5 pt-4">
+                            <span class="text-slate-500 text-[10px]">8 مايو 2026</span>
+                            <button onclick="openBlog(2)" class="text-xs font-bold text-blue-400 hover:text-white transition flex items-center gap-1 group/btn">
+                                <span>اقرأ المقال</span>
+                                <span class="transition-transform group-hover/btn:-translate-x-1">←</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Reader Modal -->
+    <div id="blog-reader-modal" class="fixed inset-0 z-[200] opacity-0 invisible transition-all duration-500 ease-out flex items-center justify-center p-0 md:p-6 lg:p-12 overflow-hidden">
+        <!-- Blurred Background Overlay -->
+        <div id="blog-modal-overlay" class="absolute inset-0 bg-slate-950/90 backdrop-blur-2xl"></div>
+        
+        <!-- Progress Bar at top of screen inside modal -->
+        <div class="absolute top-0 left-0 w-full h-1 bg-slate-800 z-50">
+            <div id="blog-reading-progress" class="h-full bg-blue-500 w-0 transition-all duration-100"></div>
+        </div>
+
+        <!-- Modal Container -->
+        <div id="blog-modal-container" class="relative w-full h-full md:max-w-6xl md:h-[90vh] bg-slate-900/90 border border-white/10 rounded-none md:rounded-3xl shadow-[0_0_80px_rgba(2,6,23,0.8)] overflow-hidden flex flex-col transform translate-y-20 opacity-0 z-10">
+            
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-slate-900/90 backdrop-blur-md px-6 md:px-10 py-5 border-b border-white/10 flex justify-between items-center z-20">
+                <div class="flex items-center gap-3">
+                    <span id="modal-blog-category" class="bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold px-3 py-1 rounded-full">دراسة حالة</span>
+                    <span id="modal-blog-readtime" class="text-slate-400 text-xs">⏱ 7 دقائق قراءة</span>
+                </div>
+                
+                <!-- Close Button -->
+                <button onclick="closeBlog()" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-white/5 transition-all duration-300 cursor-pointer" aria-label="إغلاق">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div id="blog-modal-scroll" class="flex-grow overflow-y-auto px-6 md:px-12 py-8 md:py-12 scroll-smooth">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    
+                    <!-- Main Text Column -->
+                    <div class="lg:col-span-2 text-right">
+                        <h1 id="modal-blog-title" class="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
+                            عنوان المقال هنا
+                        </h1>
+                        
+                        <!-- Image or Decorative Graphic -->
+                        <div class="w-full h-48 md:h-80 rounded-2xl border border-white/5 bg-gradient-to-br from-slate-950 to-slate-900/80 mb-8 flex items-center justify-center relative overflow-hidden group">
+                            <div class="absolute inset-0 bg-cover bg-center opacity-40 filter blur-xs group-hover:scale-105 transition-transform duration-700" style="background-image: url('hero-background.jpg');"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent"></div>
+                            <div class="relative text-center z-10 px-6">
+                                <div class="text-blue-500 font-bold text-4xl mb-2 font-sans tracking-widest animate-pulse">UPLINK</div>
+                                <div class="text-slate-400 text-xs font-light">GROWTH ENGINE & INSIGHTS</div>
+                            </div>
+                        </div>
+
+                        <!-- Full Content Body -->
+                        <article id="modal-blog-body" class="prose prose-invert max-w-none text-slate-300 text-base md:text-lg leading-relaxed space-y-6">
+                            <!-- Content loaded dynamically -->
+                        </article>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="lg:col-span-1 flex flex-col gap-8">
+                        
+                        <!-- Info Card -->
+                        <div class="glass-card p-6 rounded-2xl border border-white/5 bg-slate-900/40">
+                            <h4 class="text-white font-bold mb-4 text-sm border-b border-white/5 pb-2">تفاصيل المقال</h4>
+                            <div class="space-y-3 text-xs text-slate-400">
+                                <div class="flex justify-between">
+                                    <span>الكاتب:</span>
+                                    <span class="text-white">فريق سيو UpLink</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>تاريخ النشر:</span>
+                                    <span id="modal-blog-date" class="text-white">20 مايو 2026</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span>القسم:</span>
+                                    <span id="modal-blog-category-sidebar" class="text-white">دراسة حالة</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Call To Action -->
+                        <div class="glass-card p-8 rounded-2xl border border-blue-500/20 bg-gradient-to-br from-blue-950/20 to-slate-900/80 text-center relative overflow-hidden group">
+                            <div class="absolute -top-12 -left-12 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl"></div>
+                            <h4 class="text-white font-bold text-lg mb-3">هل تريد نتائج مماثلة؟</h4>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-6">
+                                دعنا نحلل موقعك مجاناً ونضع لك استراتيجية سيو تضمن لك التصدر في نتائج البحث.
+                            </p>
+                            <a href="#contact" onclick="closeBlog()" class="btn-luxury inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-xl text-xs font-bold">
+                                <span>احجز استشارتك المجانية</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FAQ Section -->
     <section class="py-32 container mx-auto px-6">
@@ -630,24 +1141,84 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="py-32 text-center border-t border-white/[0.03] bg-slate-900/30">
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 md:py-32 relative border-t border-white/[0.03] bg-slate-900/30 overflow-hidden">
+        <!-- Background Glows -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-slate-800/30 rounded-full blur-[100px] pointer-events-none -z-10"></div>
 
-        <h2 class="text-5xl md:text-7xl font-bold mb-10 opacity-90">
-            هل موقعك جاهز للنمو؟
-        </h2>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
+                
+                <!-- Text Content -->
+                <div class="text-right gsap-reveal">
+                    <span class="text-blue-500 text-sm font-bold uppercase tracking-widest mb-4 block">تواصل معنا</span>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight">
+                        هل موقعك جاهز <br>
+                        <span class="text-blue-400">للانطلاق للقمة؟</span>
+                    </h2>
+                    <p class="text-slate-400 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-lg">
+                        لا تترك عملائك المحتملين يذهبون لمنافسيك. تواصل معنا اليوم لتحليل موقعك مجاناً وبناء استراتيجية نمو حقيقية.
+                    </p>
+                    
+                    <div class="flex flex-col gap-6 text-slate-300 font-medium">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 border border-blue-500/20 shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <span dir="ltr">hello@uplinkseo.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-500 border border-blue-500/20 shrink-0">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            </div>
+                            <span>دبي، الإمارات العربية المتحدة</span>
+                        </div>
+                    </div>
+                </div>
 
-        <p class="text-slate-400 max-w-2xl mx-auto mb-14 text-lg">
-            احصل على مراجعة SEO مجانية واكتشف ما الذي يمنع موقعك من الظهور في النتائج الأولى.
-        </p>
+                <!-- Form Card -->
+                <div class="glass-card p-8 md:p-12 rounded-3xl relative gsap-reveal shadow-[0_0_40px_rgba(59,130,246,0.05)] border border-white/10">
+                    <form action="#" method="POST" class="flex flex-col gap-6">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="flex flex-col gap-2">
+                                <label for="name" class="text-sm font-medium text-slate-400">الاسم بالكامل</label>
+                                <input type="text" id="name" placeholder="محمد أحمد" class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-5 py-4 text-white placeholder-slate-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="flex flex-col gap-2">
+                                <label for="phone" class="text-sm font-medium text-slate-400">رقم الهاتف</label>
+                                <input type="tel" id="phone" dir="ltr" placeholder="+971 50 123 4567" class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-5 py-4 text-white placeholder-slate-600 text-right focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                            </div>
+                        </div>
 
-        <a href="mailto:hello@axonseo.com"
-           class="btn-luxury group inline-flex items-center gap-3 px-12 py-5 rounded-full text-sm font-bold transition-all">
-            <span>احجز استشارة مجانية</span>
-            <span class="transition-transform group-hover:-translate-x-1">←</span>
-        </a>
+                        <!-- Email -->
+                        <div class="flex flex-col gap-2">
+                            <label for="email" class="text-sm font-medium text-slate-400">البريد الإلكتروني</label>
+                            <input type="email" id="email" dir="ltr" placeholder="you@company.com" class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-5 py-4 text-white placeholder-slate-600 text-right focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                        </div>
 
+                        <!-- Website URL -->
+                        <div class="flex flex-col gap-2">
+                            <label for="website" class="text-sm font-medium text-slate-400">رابط الموقع (اختياري)</label>
+                            <input type="url" id="website" dir="ltr" placeholder="https://www.yourdomain.com" class="w-full bg-slate-950/50 border border-slate-700 rounded-xl px-5 py-4 text-white placeholder-slate-600 text-right focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn-luxury group w-full py-4 mt-4 rounded-xl text-lg font-bold flex justify-center items-center gap-3">
+                            <span>احصل على الاستشارة</span>
+                            <span class="transition-transform group-hover:-translate-x-1">←</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="pt-24 pb-12 border-t border-white/[0.03] bg-slate-950/50">
@@ -657,26 +1228,26 @@
                 <!-- Branding -->
                 <div class="md:col-span-1">
                     <div class="text-3xl font-bold tracking-tighter uppercase mb-6" style="font-family: var(--font-title);">
-                        AXON<span class="text-blue-500">.</span>
+                        UPLINK<span class="text-blue-500">.</span>
                     </div>
                     <p class="text-slate-400 text-sm leading-relaxed mb-8">
                         وكالة متخصصة في تحسين محركات البحث، نساعد الشركات على بناء نمو مستدام وحقيقي من خلال نتائج البحث العضوية.
                     </p>
                     <!-- Social Links -->
                     <div class="flex space-x-reverse space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
+                        <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
                             <!-- X / Twitter Icon -->
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
                             </svg>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
+                        <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
                             <!-- LinkedIn Icon -->
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path>
                             </svg>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
+                        <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
                             <!-- Instagram Icon -->
                             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
@@ -713,7 +1284,7 @@
                     <ul class="space-y-4 text-sm text-slate-400">
                         <li class="flex items-center gap-3">
                             <span class="text-blue-500">✉</span>
-                            <a href="mailto:hello@axonseo.com" class="hover:text-blue-400 transition-colors">hello@axonseo.com</a>
+                            <a href="mailto:hello@uplinkseo.com" class="hover:text-blue-400 transition-colors">hello@uplinkseo.com</a>
                         </li>
                         <li class="flex items-center gap-3">
                             <span class="text-blue-500">☎</span>
@@ -731,7 +1302,7 @@
             <!-- Bottom Bar -->
             <div class="pt-8 border-t border-white/[0.03] flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-slate-500 text-sm">
-                    © 2026 AXON SEO — Growth Engineered. جميع الحقوق محفوظة.
+                    © 2026 UPLINK SEO — Growth Engineered. جميع الحقوق محفوظة.
                 </p>
                 <div class="text-slate-500 text-xs flex space-x-reverse space-x-4">
                     <a href="#" class="hover:text-white transition-colors">شروط الخدمة</a>
@@ -756,6 +1327,9 @@
         </svg>
     </button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
@@ -809,6 +1383,18 @@
         });
 
         window.addEventListener('load', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReducedMotion) {
+                gsap.set(".gsap-reveal", { autoAlpha: 1, y: 0 });
+                const graphBefore = document.getElementById('graph-before');
+                const graphAfter = document.getElementById('graph-after');
+                if (graphBefore && graphAfter) {
+                    gsap.set([graphBefore, graphAfter], { strokeDashoffset: 0 });
+                    gsap.set(".graph-milestone, .graph-dot, .graph-annotation, .graph-area, .graph-tooltip-2", { opacity: 1 });
+                }
+                return; // Skip complex animations
+            }
 
             gsap.set(".gsap-reveal", {
                 autoAlpha: 0,
@@ -829,24 +1415,8 @@
                 delay: 0.5
             });
 
-            // Interactive Toggle on Scroll for Problem/Solution
-            const psTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: "#problem-solution",
-                    start: "top top",
-                    end: "bottom bottom",
-                    scrub: 1,
-                }
-            });
-
-            psTimeline.to("#content-problem", { autoAlpha: 0, y: -30, duration: 1 })
-                      .to("#ps-glow-red", { opacity: 0, duration: 1 }, "<")
-                      .to("#ps-glow-blue", { opacity: 1, duration: 1 }, "<")
-                      .to("#toggle-knob", { x: -32, backgroundColor: "#3b82f6", boxShadow: "0 0 15px rgba(59,130,246,0.6)", duration: 1 }, "<")
-                      .to("#label-problem", { color: "#64748b", duration: 1 }, "<")
-                      .to("#label-solution", { color: "#3b82f6", duration: 1 }, "<")
-                      .to("#ps-card", { borderTopColor: "rgba(59, 130, 246, 0.5)", duration: 1 }, "<")
-                      .fromTo("#content-solution", { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 1 }, "<0.5");
+            // Problem/Solution 2-Card layout — no GSAP hide/reveal.
+            // Cards are always visible via CSS. No opacity manipulation.
 
             // Graph Animation
             const graphBefore = document.getElementById('graph-before');
@@ -861,12 +1431,12 @@
 
                 const tlGraph = gsap.timeline({
                     scrollTrigger: {
-                        trigger: "#axon-effect",
+                        trigger: "#uplink-effect",
                         start: "top 75%",
                     }
                 });
 
-                tlGraph.to("#axon-effect .gsap-reveal", { autoAlpha: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out" })
+                tlGraph.to("#uplink-effect .gsap-reveal", { autoAlpha: 1, y: 0, duration: 1, stagger: 0.2, ease: "power3.out" })
                        .to(graphBefore, { strokeDashoffset: 0, duration: 1.5, ease: "power1.inOut" }, "-=0.2")
                        .to(".graph-milestone", { opacity: 1, duration: 0.5 }, "-=0.2")
                        .to(".graph-dot:first-of-type", { opacity: 1, duration: 0.3 }, "-=0.2")
@@ -914,6 +1484,30 @@
                 ease: "back.out(1.2)"
             });
 
+            gsap.to("#blog .gsap-reveal", {
+                scrollTrigger: {
+                    trigger: "#blog",
+                    start: "top 80%"
+                },
+                autoAlpha: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: "power3.out"
+            });
+
+            gsap.to("#contact .gsap-reveal", {
+                scrollTrigger: {
+                    trigger: "#contact",
+                    start: "top 80%",
+                },
+                autoAlpha: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+
             ScrollTrigger.refresh();
         });
 
@@ -946,6 +1540,7 @@
         mobileMenuBtn.addEventListener('click', () => {
             isMenuOpen = !isMenuOpen;
             toggleMenuIcons();
+            mobileMenuBtn.setAttribute('aria-expanded', isMenuOpen);
             if (isMenuOpen) {
                 mobileMenu.classList.remove('opacity-0', 'invisible');
                 mobileMenu.classList.add('opacity-100', 'visible');
@@ -971,19 +1566,7 @@
         // Premium Interactions (Magnetic, Scramble, Particles)
         // ==========================================
 
-        // 2. Magnetic Buttons
-        const magneticBtns = document.querySelectorAll('.btn-luxury');
-        magneticBtns.forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                gsap.to(btn, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: 'power2.out' });
-            });
-            btn.addEventListener('mouseleave', () => {
-                gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
-            });
-        });
+        // 2. Magnetic Buttons logic removed in favor of glowing hover effect
 
         // 3. Text Scramble Effect
         class TextScramble {
@@ -1051,7 +1634,8 @@
         }
 
         // 4. Particles Background
-        if(typeof tsParticles !== 'undefined') {
+        const reducedMotionParticles = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(typeof tsParticles !== 'undefined' && !reducedMotionParticles) {
             tsParticles.load("tsparticles", {
                 fpsLimit: 60,
                 particles: {
@@ -1069,6 +1653,167 @@
                 },
                 detectRetina: true
             });
+        }
+
+        // ==========================================
+        // Blog Interaction System
+        // ==========================================
+        const blogArticles = [
+            {
+                title: "كيف حققنا نمواً بنسبة 310% في الزيارات العضوية لمتجر إلكتروني؟",
+                category: "دراسة حالة",
+                readTime: "7 دقائق قراءة",
+                date: "20 مايو 2026",
+                content: `
+                    <p class="text-lg text-slate-200 font-medium mb-6">في هذه المقالة، سنكشف بالتفصيل الخطوات العملية التي اتبعناها لمساعدة متجر إلكتروني متوسط الحجم في الخليج على مضاعفة زيارته العضوية بأكثر من 3 مرات وزيادة المبيعات المباشرة من محركات البحث بدون إعلانات مدفوعة.</p>
+                    
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">التحدي الأساسي</h3>
+                    <p class="mb-4">عندما بدأنا العمل مع المتجر، كان يعاني من ركود تام في الزيارات العضوية (Organic Traffic) لأكثر من عام. كان هناك اعتماد كامل على إعلانات الدفع مقابل النقرة (PPC) على منصات التواصل الاجتماعي، مما يعني أنه بمجرد إيقاف الحملات الإعلانية، تتوقف المبيعات فوراً. بالإضافة إلى ذلك، كان الموقع يحتوي على أكثر من 300 خطأ تقني وتكرار كبير في صفحات المنتجات.</p>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">خطة العمل والحلول التقنية</h3>
+                    <p class="mb-4">قمنا بتقسيم استراتيجيتنا إلى ثلاثة محاور رئيسية تم تنفيذها على مدار 6 أشهر:</p>
+                    
+                    <ul class="list-disc list-inside space-y-3 my-4 pr-4 text-right">
+                        <li><strong class="text-blue-400">تحسين محركات البحث التقني (Technical Audit):</strong> قمنا بحل مشاكل الصفحات المكررة وأخطاء الزحف، ورفعنا سرعة تحميل الصفحات من 4.2 ثوانٍ إلى 1.3 ثانية فقط على الجوال عبر ضغط الصور واستخدام شبكات توصيل المحتوى (CDNs).</li>
+                        <li><strong class="text-blue-400">إعادة هندسة الكلمات المفتاحية:</strong> ركزنا على الكلمات المفتاحية ذات نية شراء عالية (Transactional Keywords) بدلاً من الكلمات العامة مرتفعة الصعوبة وقليلة العائد.</li>
+                        <li><strong class="text-blue-400">بناء سلطة النطاق (Link Building):</strong> حصلنا على روابط خلفية ذات موثوقية عالية (High-DA Backlinks) من مواقع وصحف رائدة في قطاع التجارة الرقمية.</li>
+                    </ul>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">النتائج المحققة</h3>
+                    <p class="mb-4">بعد انتهاء الـ 6 أشهر الأولى، تحققت قفزة هائلة في الأداء:</p>
+                    <div class="grid grid-cols-2 gap-4 my-6">
+                        <div class="bg-slate-950/50 p-4 rounded-xl border border-white/5 text-center">
+                            <div class="text-2xl font-bold text-blue-500">+310%</div>
+                            <div class="text-xs text-slate-400">نمو الزيارات العضوية</div>
+                        </div>
+                        <div class="bg-slate-950/50 p-4 rounded-xl border border-white/5 text-center">
+                            <div class="text-2xl font-bold text-blue-500">Top 3</div>
+                            <div class="text-xs text-slate-400">الترتيب للكلمات الأساسية</div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">الخلاصة والدرس المستفاد</h3>
+                    <p class="mb-4">الاستثمار في السيو التقني وبناء محتوى يركز على احتياجات العميل هو الطريق الوحيد لبناء نمو مستدام ومستقر يحرر متجرك من قبضة تكاليف الإعلانات المتزايدة باستمرار.</p>
+                `
+            },
+            {
+                title: "السيو التقني (Technical SEO): الدليل الشامل لعام 2026",
+                category: "سيو تقني",
+                readTime: "5 دقائق قراءة",
+                date: "15 مايو 2026",
+                content: `
+                    <p class="text-lg text-slate-200 font-medium mb-6">قبل أن تفكر في كتابة المحتوى أو بناء الروابط الخارجية، يجب أن تتأكد من أن عناكب بحث جوجل قادرة على فهم موقعك وأرشفته دون عوائق. إليك دليلك العملي لتهيئة موقعك تقنياً.</p>
+                    
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">ما هو السيو التقني ولماذا يهمك؟</h3>
+                    <p class="mb-4">السيو التقني يشير إلى تحسين البنية التحتية لموقع الويب الخاص بك لمساعدة محركات البحث في الزحف إليه وفهرسته وعرضه بشكل صحيح. إذا كان موقعك رائع المحتوى ولكن بطيء التحميل أو غير متوافق مع الجوال، فلن يتصدر النتائج أبداً.</p>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">الركائز الأربع للسيو التقني الناجح</h3>
+                    <ol class="list-decimal list-inside space-y-3 my-4 pr-4 text-right">
+                        <li class="mb-2"><strong class="text-blue-400">سرعة الموقع (Page Speed):</strong> تعتبر سرعة الموقع الآن عاملاً حاسماً في الترتيب. تأكد من اجتياز اختبار Core Web Vitals من جوجل عبر تحسين حجم الصور وتجنب شفرات الـ JavaScript غير المستخدمة.</li>
+                        <li class="mb-2"><strong class="text-blue-400">الأرشفة والزحف (Crawlability & Indexing):</strong> استخدم ملف Robots.txt بحذر لتوجيه الروبوتات، وتأكد من تحديث ملف Sitemap.xml وتقديمه بانتظام على Google Search Console.</li>
+                        <li class="mb-2"><strong class="text-blue-400">الشهادة الأمنية (HTTPS):</strong> تأكد من تفعيل بروتوكول الأمان SSL في كافة صفحات موقعك، حيث لم يعد الأمان اختيارياً بالنسبة لجوجل.</li>
+                        <li class="mb-2"><strong class="text-blue-400">البيانات المنظمة (Schema Markup):</strong> تساعد الأكواد البرمجية التوضيحية محرك البحث على فهم طبيعة المحتوى وعرض مقتطفات منسقة وجذابة (Rich Snippets) في نتائج البحث.</li>
+                    </ol>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">خطوة أولى للبدء اليوم</h3>
+                    <p class="mb-4">افتح أداة Google PageSpeed Insights وافحص الصفحة الرئيسية لموقعك. ابدأ بمعالجة المشاكل الحمراء التي تظهر في التقرير فوراً.</p>
+                `
+            },
+            {
+                title: "كيف تكتب محتوى يرضي جوجل والقارئ معاً؟",
+                category: "كتابة المحتوى",
+                readTime: "4 دقائق قراءة",
+                date: "8 مايو 2026",
+                content: `
+                    <p class="text-lg text-slate-200 font-medium mb-6">عصر حشو الكلمات المفتاحية انتهى تماماً. اليوم، تكافئ جوجل المحتوى الذي يقدم قيمة حقيقية للزائر ويجيب على تساؤلاته بشكل مباشر وعميق. إليك طريقة تحقيق هذه المعادلة.</p>
+                    
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">فهم نية البحث (Search Intent)</h3>
+                    <p class="mb-4">قبل أن تكتب كلمة واحدة، يجب أن تسأل نفسك: ماذا يريد الباحث فعلياً عندما يكتب هذه العبارة؟</p>
+                    <ul class="list-disc list-inside space-y-2 my-4 pr-4 text-right">
+                        <li>هل يريد معلومات؟ (نية معلوماتية)</li>
+                        <li>هل يريد شراء منتج؟ (نية تجارية)</li>
+                        <li>هل يريد الوصول لموقع معين؟ (نية ملاحية)</li>
+                    </ul>
+                    <p class="mb-4">اكتب محتواك بحيث يلبي هذه النية بدقة كاملة.</p>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">هيكلة مقالك لتجربة قراءة ممتعة</h3>
+                    <p class="mb-4">الزوار لا يقرأون الكتل النصية الضخمة. قم بتقسيم المقال إلى فقرات قصيرة لا تتعدى 3 أسطر، واستخدم العناوين الفرعية (H2, H3) بذكاء والقوائم المنقطة لتسهيل المسح البصري للمحتوى.</p>
+
+                    <h3 class="text-xl md:text-2xl font-bold text-white mt-8 mb-4">مفهوم E-E-A-T الجديد من جوجل</h3>
+                    <p class="mb-4">تركز جوجل بشكل هائل على الخبرة والتجربة والموثوقية والنزاهة. اعرض أدلة عملية، دراسات حالة، أو استشهد بأبحاث موثوقة لتقوية موقف مقالك وتصدرك.</p>
+                `
+            }
+        ];
+
+        function openBlog(index) {
+            const article = blogArticles[index];
+            if (!article) return;
+            
+            // Populate data
+            document.getElementById('modal-blog-category').innerText = article.category;
+            document.getElementById('modal-blog-category-sidebar').innerText = article.category;
+            document.getElementById('modal-blog-readtime').innerText = article.readTime;
+            document.getElementById('modal-blog-title').innerText = article.title;
+            document.getElementById('modal-blog-date').innerText = article.date;
+            document.getElementById('modal-blog-body').innerHTML = article.content;
+            
+            const modal = document.getElementById('blog-reader-modal');
+            const container = document.getElementById('blog-modal-container');
+            const scrollContainer = document.getElementById('blog-modal-scroll');
+            
+            // Reset scroll and progress bar
+            scrollContainer.scrollTop = 0;
+            document.getElementById('blog-reading-progress').style.width = '0%';
+            
+            // Show modal background & animate container up
+            modal.classList.remove('opacity-0', 'invisible');
+            document.body.style.overflow = 'hidden';
+            
+            gsap.killTweensOf([modal, container]);
+            gsap.to(modal, { opacity: 1, duration: 0.4, ease: "power2.out" });
+            gsap.to(container, { opacity: 1, y: 0, scale: 1, duration: 0.6, ease: "power3.out", delay: 0.1 });
+            
+            // Setup scroll progress listener inside modal
+            scrollContainer.onscroll = () => {
+                const scrollPx = scrollContainer.scrollTop;
+                const winHeightPx = scrollContainer.scrollHeight - scrollContainer.clientHeight;
+                const scrollPercent = winHeightPx > 0 ? (scrollPx / winHeightPx) * 100 : 0;
+                document.getElementById('blog-reading-progress').style.width = scrollPercent + '%';
+            };
+        }
+
+        function closeBlog() {
+            const modal = document.getElementById('blog-reader-modal');
+            const container = document.getElementById('blog-modal-container');
+            
+            gsap.killTweensOf([modal, container]);
+            gsap.to(container, { opacity: 0, y: 50, scale: 0.95, duration: 0.4, ease: "power3.in" });
+            gsap.to(modal, { 
+                opacity: 0, 
+                duration: 0.4, 
+                ease: "power2.in", 
+                delay: 0.1,
+                onComplete: () => {
+                    modal.classList.add('opacity-0', 'invisible');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // Close modal on Escape key press
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('blog-reader-modal');
+                if (modal && !modal.classList.contains('invisible')) {
+                    closeBlog();
+                }
+            }
+        });
+
+        // Close on clicking backdrop
+        const overlayEl = document.getElementById('blog-modal-overlay');
+        if (overlayEl) {
+            overlayEl.addEventListener('click', closeBlog);
         }
     </script>
 
